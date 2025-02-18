@@ -1,0 +1,43 @@
+{
+  "name": "OP_NET Smart Contract Template",
+  "version": "0.0.1",
+  "description": "OP_NET Smart Contract Template with a simple vesting contract and unit tests",
+  "main": "index.js",
+  "scripts": {},
+  "devDependencies": {
+    "@types/node": "^22.9.1",
+    "assemblyscript": "^0.27.25",
+    "prettier": "^3.2.5"
+  },
+  "engines": {
+    "node": ">=23"
+  },
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "bitcoin",
+    "smart",
+    "contract",
+    "runtime",
+    "opnet",
+    "OP_NET",
+    "wrapped bitcoin",
+    "wbtc"
+  ],
+  "dependencies": {
+    "@assemblyscript/loader": "^0.27.31",
+    "@btc-vision/as-bignum": "0.0.4",
+    "@btc-vision/bitcoin": "6.3.6",
+    "@btc-vision/btc-runtime": "1.4.7",
+    "@btc-vision/op-vm": "0.2.7",
+    "@btc-vision/transaction": "1.2.13",
+    "@btc-vision/unit-test-framework": "0.0.18",
+    "@eslint/js": "^9.10.0",
+    "dotenv": "^16.4.7",
+    "gulplog": "^2.2.0",
+    "opnet": "1.2.24",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.6.0"
+  }
+}
