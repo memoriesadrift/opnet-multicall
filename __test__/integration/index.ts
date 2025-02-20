@@ -8,7 +8,7 @@ import {
   TransactionParameters,
 } from 'opnet';
 import { Address, Wallet } from '@btc-vision/transaction';
-import { IVestingContract, VestingContractABI } from './interfaces/VestingInterfaces';
+import { IMulticallContract, MulticallContractABI } from './interfaces/MulticallInterfaces';
 
 dotenv.config({ path: '.env' });
 
@@ -31,7 +31,7 @@ console.log('Wallet balance:', balance);
 
 const myAddress: Address = new Address(wallet.keypair.publicKey);
 
-const vestingContractAddress = await provider.getPublicKeyInfo(
+const multicallContractAddress = await provider.getPublicKeyInfo(
   process.env.VESTING_CONTRACT_ADDRESS || '',
 );
 
@@ -45,9 +45,9 @@ async function interact() {
     network,
     myAddress,
   );
-  const vestingContract: IVestingContract = getContract<IVestingContract>(
-    vestingContractAddress,
-    VestingContractABI,
+  const multicallContract: IMulticallContract = getContract<IMulticallContract>(
+    multicallContractAddress,
+    MulticallContractABI,
     provider,
     network,
     myAddress,
@@ -57,7 +57,8 @@ async function interact() {
   console.log('balance: ', balanceCall.properties.balance);
 
   // Change to whatever method is necessary
-  const call = await vestingContract.claim();
+  // FIXME: Unfinished
+  const call = await multicallContract.aggregate();
 
   const params: TransactionParameters = {
     signer: wallet.keypair, // The keypair that will sign the transaction
